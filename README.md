@@ -1,20 +1,25 @@
 # Chess GUI
 
-Dead simple single-script visualizer for chess positions. The program shows which squares are attacked and how many times
-for each color. Just give it a FEN and it will generate visualizations.
-
-Maybe at some point I'll add more to it, but for now this was what I really wanted to see.
+Simple visualizer for attacked squares in chess. The program shows which squares are attacked and how many times
+for each color.
 
 ## Dependencies
 To run this script you'll need to install python packages `numpy`, `PyQt5`, and `chess`
 
-## Example running
+## Running
+To run the app, you need to run the main python file which is located in `./app/`
 ```commandline
 python3 main.py
----------------------------------------------------------------
-> Type the fen:
-rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2
 ```
 
-Will show:
-![example output](doc/example.png)
+This will bring up the main GUI:
+![example output](doc/main_gui.png)
+
+These are the features so far:
+ * Upper left dropdown: Shows a list of current legal moves. Selecting one will play that move on the board
+ * Upper middle textbox: Typing a legal move in algebraic notation will play that move on the board
+ * Upper right button: Pressing this will undo any moves played
+ * Center left board: Shows the squares attacked by white (darker red means multiple attackers)
+ * Center middle board: Shows the squares attacked by black
+ * Center right board: Shows pieces that are over-attacked in red
+ * Lower textbox: Allows you to input a custom FEN
