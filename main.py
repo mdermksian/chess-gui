@@ -15,22 +15,18 @@ class Main(QWidget):
 
         white_svg = self.generate_svg(board, chess.WHITE)
         black_svg = self.generate_svg(board, chess.BLACK)
-
         white_svg_bytes = bytearray(white_svg, encoding='utf-8')
         black_svg_bytes = bytearray(black_svg, encoding='utf-8')
         whiteSvg = QSvgWidget()
         whiteSvg.renderer().load(white_svg_bytes)
-        # whiteSvg.setGeometry(0, 0, 500, 500)
-
         blackSvg = QSvgWidget()
         blackSvg.renderer().load(black_svg_bytes)
-        # blackSvg.setGeometry(0, 0, 500, 500)
 
         hbox = QHBoxLayout()
         hbox.addWidget(whiteSvg)
         hbox.addWidget(blackSvg)
         self.setLayout(hbox)
-        self.setGeometry(0, 0, 1600, 800)
+        self.setGeometry(10, 10, 1600, 800)
         self.show()
 
     @staticmethod
